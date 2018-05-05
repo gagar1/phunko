@@ -55,7 +55,7 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
                     for (ListIterator<DriverBAC> iter = list.listIterator(); iter.hasNext(); ) {
                         Log.d(TAG, "Drive records being interated...");
                         DriverBAC driverRecord = iter.next();
-                        if (Integer.valueOf(driverRecord.getBacValue()) >= 5) {
+                        if (Float.valueOf(driverRecord.getBacValue())*10 >= 4) {
                             driverTipsy = true;
                             Log.d(TAG, "Sms with condition detected");
                             Toast.makeText(context, "ALARM!!! You are drunk, can't take ride, bye-bye", Toast.LENGTH_LONG).show();
